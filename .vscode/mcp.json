@@ -1,0 +1,27 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "figma-api-key",
+      "description": "Figma API Key",
+      "password": true
+    }
+  ],
+  "servers": {
+    "figmaDesigner": {
+      "type": "stdio",
+      "command": "/Users/joel/.nvm/versions/node/v22.12.0/bin/npm",
+      "args": [
+        "figma-developer-mcp",
+        "--figma-api-key=${input:figma-api-key}",
+        "--stdio"
+      ]
+    },
+    "playwright": {
+      "command": "/Users/joel/.nvm/versions/node/v22.12.0/bin/npm",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
